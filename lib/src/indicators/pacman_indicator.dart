@@ -26,9 +26,9 @@ class PacmanIndicator extends StatefulWidget {
 
 class _PacmanIndicatorState extends State<PacmanIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> pacman;
-  Animation<double> bean;
+  late AnimationController _controller;
+  late Animation<double> pacman;
+  late Animation<double> bean;
 
   @override
   void initState() {
@@ -50,7 +50,7 @@ class _PacmanIndicatorState extends State<PacmanIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -82,11 +82,11 @@ double _lastExtent = .0;
 
 class _PacmanIndicatorPainter extends CustomPainter {
   _PacmanIndicatorPainter({
-    this.pacmanAngle,
-    this.beanTransX,
-    this.radius,
-    this.beanRadius,
-    this.color,
+    required this.pacmanAngle,
+    required this.beanTransX,
+    required this.radius,
+    required this.beanRadius,
+    required this.color,
   });
 
   final double pacmanAngle;

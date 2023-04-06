@@ -24,8 +24,8 @@ class BallScaleRippleMultipleIndicator extends StatefulWidget {
 class _BallScaleRippleMultipleIndicatorState
     extends State<BallScaleRippleMultipleIndicator>
     with SingleTickerProviderStateMixin {
-  Animation<double> _animation;
-  AnimationController _controller;
+  late Animation<double> _animation;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -44,7 +44,7 @@ class _BallScaleRippleMultipleIndicatorState
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -74,11 +74,11 @@ class _BallScaleRippleMultipleIndicatorState
 
 class _BallScaleRippleMultipleIndicatorPainter extends CustomPainter {
   _BallScaleRippleMultipleIndicatorPainter({
-    this.animationValue,
-    this.radius,
-    this.ballColor,
-    this.duration,
-  }) : offsetList = <double>[radius, radius * .7, radius * .4],
+    required this.animationValue,
+    required this.radius,
+    required this.ballColor,
+    required this.duration,
+  })  : offsetList = <double>[radius, radius * .7, radius * .4],
         strokeList = <double>[1.2, .84, 0.48];
 
   final double animationValue;

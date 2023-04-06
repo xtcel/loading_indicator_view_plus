@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:loading_indicator_view/src/infinite_progress.dart';
+import 'package:loading_indicator_view_plus/src/infinite_progress.dart';
 
 ///
 /// author: Vans Z
@@ -79,13 +79,13 @@ double _lastExtent = .0;
 
 class _LineScaleIndicatorPainter extends CustomPainter {
   _LineScaleIndicatorPainter({
-    this.animationValue,
-    this.minLength,
-    this.maxLength,
-    this.lineWidth,
-    this.spacing,
-    this.lineNum,
-    this.lineColor,
+    required this.animationValue,
+    required this.minLength,
+    required this.maxLength,
+    required this.lineWidth,
+    required this.spacing,
+    required this.lineNum,
+    required this.lineColor,
   }) {
     offsetLength = <double>[];
     var diffLength = maxLength - minLength;
@@ -102,7 +102,7 @@ class _LineScaleIndicatorPainter extends CustomPainter {
   final int lineNum;
   final Color lineColor;
 
-  List<double> offsetLength;
+  late List<double> offsetLength;
 
   @override
   void paint(Canvas canvas, Size size) {

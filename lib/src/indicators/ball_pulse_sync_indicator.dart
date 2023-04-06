@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:loading_indicator_view/src/infinite_progress.dart';
+import 'package:loading_indicator_view_plus/src/infinite_progress.dart';
 
 ///
 /// author：Vans Z
@@ -29,7 +29,6 @@ class BallPulseSyncIndicator extends StatefulWidget {
 
 class _BallPulseSyncIndicatorState extends State<BallPulseSyncIndicator>
     with TickerProviderStateMixin, InfiniteProgressMixin {
-
   @override
   void initState() {
     startEngine(this, widget.duration);
@@ -52,20 +51,19 @@ class _BallPulseSyncIndicatorState extends State<BallPulseSyncIndicator>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: controller,
-      builder: (context, child){
-        return CustomPaint(
-          size: measureSize(),
-          painter: _BallPulseSyncIndicatorPainter(
-            animationValue: animationValue,
-            extent: widget.extent,
-            radius: widget.radius,
-            spacing: widget.spacing,
-            ballColor: widget.ballColor,
-          ),
-        );
-      }
-    );
+        animation: controller,
+        builder: (context, child) {
+          return CustomPaint(
+            size: measureSize(),
+            painter: _BallPulseSyncIndicatorPainter(
+              animationValue: animationValue,
+              extent: widget.extent,
+              radius: widget.radius,
+              spacing: widget.spacing,
+              ballColor: widget.ballColor,
+            ),
+          );
+        });
   }
 }
 
@@ -74,11 +72,11 @@ double _lastExtent = .0;
 
 class _BallPulseSyncIndicatorPainter extends CustomPainter {
   _BallPulseSyncIndicatorPainter({
-    this.animationValue,
-    this.extent,
-    this.radius,
-    this.spacing,
-    this.ballColor,
+    required this.animationValue,
+    required this.extent,
+    required this.radius,
+    required this.spacing,
+    required this.ballColor,
   }) : extentList = <double>[extent * 0.9, extent * 0.6, extent * 0.3];
 
   final double animationValue;
@@ -106,7 +104,8 @@ class _BallPulseSyncIndicatorPainter extends CustomPainter {
     for (int i = 0; i < extentList.length; i++) {
       var dx = radius + 2 * i * radius + i * spacing;
       var offsetExtent = asin(extentList[i] / extent);
-      var offsetY = sin(_progress * pi / 180 + offsetExtent).abs() * extent + radius;
+      var offsetY =
+          sin(_progress * pi / 180 + offsetExtent).abs() * extent + radius;
       var offset = Offset(dx, offsetY);
       canvas.drawCircle(offset, radius, paint);
     }

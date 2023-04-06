@@ -28,11 +28,11 @@ class CubeTransitionIndicator extends StatefulWidget {
 
 class _CubeTransitionIndicatorState extends State<CubeTransitionIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> transX;
-  Animation<double> transReverseX;
-  Animation<double> transY;
-  Animation<double> transReverseY;
+  late AnimationController _controller;
+  late Animation<double> transX;
+  late Animation<double> transReverseX;
+  late Animation<double> transY;
+  late Animation<double> transReverseY;
 
   @override
   void initState() {
@@ -60,7 +60,7 @@ class _CubeTransitionIndicatorState extends State<CubeTransitionIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -86,13 +86,13 @@ class _CubeTransitionIndicatorState extends State<CubeTransitionIndicator>
 
 class _CubeTransitionIndicatorPainter extends CustomPainter {
   _CubeTransitionIndicatorPainter({
-    this.transX,
-    this.transReverseX,
-    this.transY,
-    this.transReverseY,
-    this.minCubeSize,
-    this.maxCubeSize,
-    this.color,
+    required this.transX,
+    required this.transReverseX,
+    required this.transY,
+    required this.transReverseY,
+    required this.minCubeSize,
+    required this.maxCubeSize,
+    required this.color,
   });
 
   final double transX;

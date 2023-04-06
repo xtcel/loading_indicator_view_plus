@@ -22,8 +22,8 @@ class BallScaleMultipleIndicator extends StatefulWidget {
 
 class _BallScaleMultipleIndicatorState extends State<BallScaleMultipleIndicator>
     with SingleTickerProviderStateMixin {
-  Animation<double> _animation;
-  AnimationController _controller;
+  late Animation<double> _animation;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -42,7 +42,7 @@ class _BallScaleMultipleIndicatorState extends State<BallScaleMultipleIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -72,10 +72,10 @@ class _BallScaleMultipleIndicatorState extends State<BallScaleMultipleIndicator>
 
 class _BallScaleMultipleIndicatorPainter extends CustomPainter {
   _BallScaleMultipleIndicatorPainter({
-    this.animationValue,
-    this.radius,
-    this.ballColor,
-    this.duration,
+    required this.animationValue,
+    required this.radius,
+    required this.ballColor,
+    required this.duration,
   }) : offsetList = <double>[radius, radius * .7, radius * .4];
 
   final double animationValue;

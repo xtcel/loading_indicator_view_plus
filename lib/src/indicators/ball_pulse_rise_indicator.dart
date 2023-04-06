@@ -28,8 +28,8 @@ class BallPulseRiseIndicator extends StatefulWidget {
 
 class _BallPulseRiseIndicatorState extends State<BallPulseRiseIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _rotateX;
+  late AnimationController _controller;
+  late Animation<double> _rotateX;
 
   @override
   void initState() {
@@ -48,7 +48,7 @@ class _BallPulseRiseIndicatorState extends State<BallPulseRiseIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -80,11 +80,11 @@ class _BallPulseRiseIndicatorState extends State<BallPulseRiseIndicator>
 
 class _BallPulseRiseIndicatorPainter extends CustomPainter {
   _BallPulseRiseIndicatorPainter({
-    this.rotateX,
-    this.ballRadius,
-    this.horizontalSpacing,
-    this.verticalSpacing,
-    this.color,
+    required this.rotateX,
+    required this.ballRadius,
+    required this.horizontalSpacing,
+    required this.verticalSpacing,
+    required this.color,
   });
 
   final double rotateX;

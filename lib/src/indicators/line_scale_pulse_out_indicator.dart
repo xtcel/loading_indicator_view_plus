@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:loading_indicator_view/src/infinite_progress.dart';
+import 'package:loading_indicator_view_plus/src/infinite_progress.dart';
 
 ///
 /// author: Vans Z
@@ -28,12 +28,10 @@ class LineScalePulseOutIndicator extends StatefulWidget {
   final Duration duration;
 
   @override
-  State<StatefulWidget> createState() =>
-      _LineScalePulseOutIndicatorState();
+  State<StatefulWidget> createState() => _LineScalePulseOutIndicatorState();
 }
 
-class _LineScalePulseOutIndicatorState
-    extends State<LineScalePulseOutIndicator>
+class _LineScalePulseOutIndicatorState extends State<LineScalePulseOutIndicator>
     with SingleTickerProviderStateMixin, InfiniteProgressMixin {
   @override
   void initState() {
@@ -81,13 +79,13 @@ double _lastExtent = .0;
 
 class _LineScalePulseOutIndicatorPainter extends CustomPainter {
   _LineScalePulseOutIndicatorPainter({
-    this.animationValue,
-    this.minLength,
-    this.maxLength,
-    this.lineWidth,
-    this.spacing,
-    this.lineNum,
-    this.lineColor,
+    required this.animationValue,
+    required this.minLength,
+    required this.maxLength,
+    required this.lineWidth,
+    required this.spacing,
+    required this.lineNum,
+    required this.lineColor,
   }) : offsetLength = <double>[
           minLength + (maxLength - minLength) * .2,
           minLength + (maxLength - minLength) * .8,

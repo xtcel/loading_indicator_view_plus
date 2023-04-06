@@ -83,14 +83,14 @@ double _lastExtent = .0;
 
 class _LineSpinFadeLoaderIndicatorPainter extends CustomPainter {
   _LineSpinFadeLoaderIndicatorPainter({
-    this.animationValue,
-    this.minLineWidth,
-    this.maxLineWidth,
-    this.minLineHeight,
-    this.maxLineHeight,
-    this.minAlpha,
-    this.maxAlpha,
-    this.ballColor,
+    required this.animationValue,
+    required this.minLineWidth,
+    required this.maxLineWidth,
+    required this.minLineHeight,
+    required this.maxLineHeight,
+    required this.minAlpha,
+    required this.maxAlpha,
+    required this.ballColor,
   });
 
   final double animationValue;

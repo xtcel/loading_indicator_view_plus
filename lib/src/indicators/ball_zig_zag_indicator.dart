@@ -28,12 +28,12 @@ class BallZigZagIndicator extends StatefulWidget {
 
 class _BallZigZagIndicatorState extends State<BallZigZagIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _horizontal;
-  Animation<double> _rightWaistX;
-  Animation<double> _rightWaistY;
-  Animation<double> _leftWaistX;
-  Animation<double> _leftWaistY;
+  late AnimationController _controller;
+  late Animation<double> _horizontal;
+  late Animation<double> _rightWaistX;
+  late Animation<double> _rightWaistY;
+  late Animation<double> _leftWaistX;
+  late Animation<double> _leftWaistY;
 
   @override
   void initState() {
@@ -90,7 +90,7 @@ class _BallZigZagIndicatorState extends State<BallZigZagIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -99,30 +99,30 @@ class _BallZigZagIndicatorState extends State<BallZigZagIndicator>
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) => CustomPaint(
-            size: Size(widget.width, widget.height),
-            painter: _BallZigZagIndicatorPainter(
-              horizontal: _horizontal.value,
-              rightWaistX: _rightWaistX.value,
-              rightWaistY: _rightWaistY.value,
-              leftWaistX: _leftWaistX.value,
-              leftWaistY: _leftWaistY.value,
-              ballRadius: widget.ballRadius,
-              color: widget.color,
-            ),
-          ),
+        size: Size(widget.width, widget.height),
+        painter: _BallZigZagIndicatorPainter(
+          horizontal: _horizontal.value,
+          rightWaistX: _rightWaistX.value,
+          rightWaistY: _rightWaistY.value,
+          leftWaistX: _leftWaistX.value,
+          leftWaistY: _leftWaistY.value,
+          ballRadius: widget.ballRadius,
+          color: widget.color,
+        ),
+      ),
     );
   }
 }
 
 class _BallZigZagIndicatorPainter extends CustomPainter {
   _BallZigZagIndicatorPainter({
-    this.horizontal,
-    this.rightWaistX,
-    this.rightWaistY,
-    this.leftWaistX,
-    this.leftWaistY,
-    this.ballRadius,
-    this.color,
+    required this.horizontal,
+    required this.rightWaistX,
+    required this.rightWaistY,
+    required this.leftWaistX,
+    required this.leftWaistY,
+    required this.ballRadius,
+    required this.color,
   });
 
   final double horizontal;

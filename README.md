@@ -1,7 +1,8 @@
-# loading_indicator_view
+# loading_indicator_view_plus
 
 A collection of awesome flutter loading animation
 
+forked from Hitomis/loading_indicator_view
 
 ## Demo
 

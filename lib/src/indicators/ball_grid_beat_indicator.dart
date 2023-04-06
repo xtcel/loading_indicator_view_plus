@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:loading_indicator_view/src/infinite_progress.dart';
+import 'package:loading_indicator_view_plus/src/infinite_progress.dart';
 
 ///
 /// author: Vans Z
@@ -75,12 +75,12 @@ double _lastExtent = .0;
 
 class _BallGridBeatIndicatorPainter extends CustomPainter {
   _BallGridBeatIndicatorPainter({
-    this.animationValue,
-    this.radius,
-    this.minAlpha,
-    this.maxAlpha,
-    this.spacing,
-    this.ballColor,
+    required this.animationValue,
+    required this.radius,
+    required this.minAlpha,
+    required this.maxAlpha,
+    required this.spacing,
+    required this.ballColor,
   }) : alphaList = <double>[
           minAlpha + (maxAlpha - minAlpha) * 0.9,
           minAlpha + (maxAlpha - minAlpha) * 0.8,

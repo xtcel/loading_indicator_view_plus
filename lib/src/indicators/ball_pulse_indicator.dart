@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'package:loading_indicator_view/src/infinite_progress.dart';
+import 'package:loading_indicator_view_plus/src/infinite_progress.dart';
 
 ///
 /// author：Vans Z
@@ -72,11 +72,11 @@ double _lastExtent = .0;
 
 class _BallPulseIndicatorPainter extends CustomPainter {
   _BallPulseIndicatorPainter({
-    this.animationValue,
-    this.minRadius,
-    this.maxRadius,
-    this.spacing,
-    this.ballColor,
+    required this.animationValue,
+    required this.minRadius,
+    required this.maxRadius,
+    required this.spacing,
+    required this.ballColor,
   }) : radiusList = <double>[
           minRadius + (maxRadius - minRadius) * 0.9,
           minRadius + (maxRadius - minRadius) * 0.6,

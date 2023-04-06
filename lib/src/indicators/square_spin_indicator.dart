@@ -25,8 +25,8 @@ class SquareSpinIndicator extends StatefulWidget {
 
 class _SquareSpinIndicatorState extends State<SquareSpinIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _rotateX, _rotateY;
+  late AnimationController _controller;
+  late Animation<double> _rotateX, _rotateY;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _SquareSpinIndicatorState extends State<SquareSpinIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -73,9 +73,9 @@ class _SquareSpinIndicatorState extends State<SquareSpinIndicator>
 
 class _SquareSpinIndicatorPainter extends CustomPainter {
   _SquareSpinIndicatorPainter({
-    this.rotateX,
-    this.rotateY,
-    this.color,
+    required this.rotateX,
+    required this.rotateY,
+    required this.color,
   });
 
   final double rotateX;

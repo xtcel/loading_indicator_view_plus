@@ -6,8 +6,8 @@ import 'package:flutter/widgets.dart';
 ///
 
 mixin InfiniteProgressMixin {
-  Animation<double> _animation;
-  AnimationController controller;
+  late Animation<double> _animation;
+  late AnimationController controller;
 
   double get animationValue => _animation.value;
 

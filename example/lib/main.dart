@@ -1,10 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_indicator_view/loading_indicator_view.dart';
+import 'package:loading_indicator_view_plus/loading_indicator_view_plus.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -23,13 +26,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Loading indicator view plus Demo'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -43,9 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 185, 63, 81),
+      backgroundColor: const Color.fromARGB(255, 185, 63, 81),
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
       body: GridView(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
           childAspectRatio: 1.0,
         ),
@@ -79,7 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-
   @override
   void didUpdateWidget(MyHomePage oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -92,12 +97,12 @@ class _MyHomePageState extends State<MyHomePage> {
       Container(color: backgroundColor, child: child);
 
   Widget wrapOrder(Widget child) => Stack(children: <Widget>[
-    child,
-    Positioned(
-      left: 8,
-      bottom: 0,
-      child: Text("${_orderNum++}",
-          style: TextStyle(color: Colors.white, fontSize: 18)),
-    ),
-  ]);
+        child,
+        Positioned(
+          left: 8,
+          bottom: 0,
+          child: Text("${_orderNum++}",
+              style: const TextStyle(color: Colors.white, fontSize: 18)),
+        ),
+      ]);
 }

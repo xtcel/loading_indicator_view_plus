@@ -24,8 +24,8 @@ class SemiCircleSpinIndicator extends StatefulWidget {
 
 class _SemiCircleSpinIndicatorState extends State<SemiCircleSpinIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _animation;
+  late AnimationController _controller;
+  late Animation<double> _animation;
 
   @override
   void initState() {
@@ -45,7 +45,7 @@ class _SemiCircleSpinIndicatorState extends State<SemiCircleSpinIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -72,8 +72,8 @@ class _SemiCircleSpinIndicatorState extends State<SemiCircleSpinIndicator>
 
 class _SemiCircleSpinIndicatorPainter extends CustomPainter {
   _SemiCircleSpinIndicatorPainter({
-    this.animationValue,
-    this.color,
+    required this.animationValue,
+    required this.color,
   });
 
   final double animationValue;

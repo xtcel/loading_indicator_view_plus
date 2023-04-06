@@ -31,9 +31,9 @@ class BallClipRotateMultipleIndicator extends StatefulWidget {
 class _BallClipRotateMultipleIndicator
     extends State<BallClipRotateMultipleIndicator>
     with SingleTickerProviderStateMixin {
-  Animation<double> _radius;
-  Animation<double> _rotate;
-  AnimationController _controller;
+  late Animation<double> _radius;
+  late Animation<double> _rotate;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -67,7 +67,7 @@ class _BallClipRotateMultipleIndicator
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -102,13 +102,13 @@ double _lastExtent = .0;
 
 class _BallClipRotateMultipleIndicatorPainter extends CustomPainter {
   _BallClipRotateMultipleIndicatorPainter({
-    this.angle,
-    this.radius,
-    this.minRadius,
-    this.maxRadius,
-    this.dashCircleRadius,
-    this.startAngle,
-    this.color,
+    required this.angle,
+    required this.radius,
+    required this.minRadius,
+    required this.maxRadius,
+    required this.dashCircleRadius,
+    required this.startAngle,
+    required this.color,
   })  : outsideStartAngles = <double>[135, -45],
         insideStartAngles = <double>[225, 45];
 

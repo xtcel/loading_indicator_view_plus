@@ -28,9 +28,9 @@ class BallClipRotateIndicator extends StatefulWidget {
 
 class _BallClipRotateIndicatorState extends State<BallClipRotateIndicator>
     with SingleTickerProviderStateMixin {
-  Animation<double> _radius;
-  Animation<double> _rotate;
-  AnimationController _controller;
+  late Animation<double> _radius;
+  late Animation<double> _rotate;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -64,7 +64,7 @@ class _BallClipRotateIndicatorState extends State<BallClipRotateIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -98,12 +98,12 @@ double _lastExtent = .0;
 
 class _BallClipRotateIndicatorPainter extends CustomPainter {
   _BallClipRotateIndicatorPainter({
-    this.angle,
-    this.radius,
-    this.minRadius,
-    this.maxRadius,
-    this.startAngle,
-    this.color,
+    required this.angle,
+    required this.radius,
+    required this.minRadius,
+    required this.maxRadius,
+    required this.startAngle,
+    required this.color,
   });
 
   final double angle;

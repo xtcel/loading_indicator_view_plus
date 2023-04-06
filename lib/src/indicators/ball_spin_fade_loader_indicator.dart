@@ -81,12 +81,12 @@ double _lastExtent = .0;
 
 class _BallSpinFadeLoaderIndicatorPainter extends CustomPainter {
   _BallSpinFadeLoaderIndicatorPainter({
-    this.animationValue,
-    this.minRadius,
-    this.maxRadius,
-    this.minAlpha,
-    this.maxAlpha,
-    this.ballColor,
+    required this.animationValue,
+    required this.minRadius,
+    required this.maxRadius,
+    required this.minAlpha,
+    required this.maxAlpha,
+    required this.ballColor,
   });
 
   final double animationValue;

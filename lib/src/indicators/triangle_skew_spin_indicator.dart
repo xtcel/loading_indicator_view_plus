@@ -26,8 +26,8 @@ class TriangleSkewSpinIndicator extends StatefulWidget {
 
 class _TriangleSkewSpinIndicatorState extends State<TriangleSkewSpinIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _rotateX, _rotateY;
+  late AnimationController _controller;
+  late Animation<double> _rotateX, _rotateY;
 
   @override
   void initState() {
@@ -49,7 +49,7 @@ class _TriangleSkewSpinIndicatorState extends State<TriangleSkewSpinIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -57,13 +57,13 @@ class _TriangleSkewSpinIndicatorState extends State<TriangleSkewSpinIndicator>
   Widget build(BuildContext context) => AnimatedBuilder(
         animation: _controller,
         builder: (context, child) => CustomPaint(
-              size: Size(widget.width, widget.height),
-              painter: _TriangleSkewSpinIndicatorPainter(
-                rotateX: _rotateX.value,
-                rotateY: _rotateY.value,
-                color: widget.color,
-              ),
-            ),
+          size: Size(widget.width, widget.height),
+          painter: _TriangleSkewSpinIndicatorPainter(
+            rotateX: _rotateX.value,
+            rotateY: _rotateY.value,
+            color: widget.color,
+          ),
+        ),
       );
 }
 
@@ -71,9 +71,9 @@ var _count = 0;
 
 class _TriangleSkewSpinIndicatorPainter extends CustomPainter {
   _TriangleSkewSpinIndicatorPainter({
-    this.rotateX,
-    this.rotateY,
-    this.color,
+    required this.rotateX,
+    required this.rotateY,
+    required this.color,
   });
 
   final double rotateX;

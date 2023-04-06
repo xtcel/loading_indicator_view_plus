@@ -28,14 +28,16 @@ class BallRotateIndicator extends StatefulWidget {
 
 class _BallRotateIndicatorState extends State<BallRotateIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _radius;
-  Animation<double> _rotate;
+  late AnimationController _controller;
+  late Animation<double> _radius;
+  late Animation<double> _rotate;
 
   @override
   void initState() {
     _controller = AnimationController(duration: widget.duration, vsync: this);
-    _radius = Tween<double>(begin: widget.minBallRadius, end: widget.maxBallRadius).animate(
+    _radius =
+        Tween<double>(begin: widget.minBallRadius, end: widget.maxBallRadius)
+            .animate(
       CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn),
     );
     _rotate = Tween<double>(begin: 0, end: 180).animate(
@@ -54,7 +56,7 @@ class _BallRotateIndicatorState extends State<BallRotateIndicator>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -86,12 +88,12 @@ double _lastExtent = .0;
 
 class _BallRotateIndicatorPainter extends CustomPainter {
   _BallRotateIndicatorPainter({
-    this.angle,
-    this.radius,
-    this.minBallRadius,
-    this.maxBallRadius,
-    this.spacing,
-    this.color,
+    required this.angle,
+    required this.radius,
+    required this.minBallRadius,
+    required this.maxBallRadius,
+    required this.spacing,
+    required this.color,
   });
 
   final double angle;

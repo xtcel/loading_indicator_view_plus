@@ -31,9 +31,9 @@ class BallClipRotatePulseIndicator extends StatefulWidget {
 class _BallClipRotatePulseIndicatorState
     extends State<BallClipRotatePulseIndicator>
     with SingleTickerProviderStateMixin {
-  Animation<double> _radius;
-  Animation<double> _rotate;
-  AnimationController _controller;
+  late Animation<double> _radius;
+  late Animation<double> _rotate;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -67,7 +67,7 @@ class _BallClipRotatePulseIndicatorState
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -102,13 +102,13 @@ double _lastExtent = .0;
 
 class _BallClipRotatePulseIndicatorPainter extends CustomPainter {
   _BallClipRotatePulseIndicatorPainter({
-    this.angle,
-    this.radius,
-    this.minRadius,
-    this.maxRadius,
-    this.solidCircleRadius,
-    this.startAngle,
-    this.color,
+    required this.angle,
+    required this.radius,
+    required this.minRadius,
+    required this.maxRadius,
+    required this.solidCircleRadius,
+    required this.startAngle,
+    required this.color,
   }) : startAngles = <double>[225, 45];
 
   final double angle;
