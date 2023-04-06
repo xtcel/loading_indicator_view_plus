@@ -6,7 +6,7 @@ forked from Hitomis/loading_indicator_view
 
 ## Demo
 
-<img src="flutter_indicator_view.gif" />
+![image](https://github.com/xtcel/loading_indicator_view_plus/blob/master/flutter_indicator_view.gif)
 
 ## Usage
 
