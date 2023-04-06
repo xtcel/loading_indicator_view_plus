@@ -11,7 +11,7 @@ forked from Hitomis/loading_indicator_view
 ## Usage
 
 ```
-loading_indicator_view: ^1.1.0
+loading_indicator_view_plus: ^2.0.0
 ```
 
 
